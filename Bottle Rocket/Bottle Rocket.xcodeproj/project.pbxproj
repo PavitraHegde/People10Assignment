@@ -9,23 +9,33 @@
 /* Begin PBXBuildFile section */
 		592D8F7A24C9B684008AD399 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592D8F7924C9B684008AD399 /* AppDelegate.swift */; };
 		592D8F7C24C9B684008AD399 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592D8F7B24C9B684008AD399 /* SceneDelegate.swift */; };
-		592D8F7E24C9B684008AD399 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592D8F7D24C9B684008AD399 /* ViewController.swift */; };
 		592D8F8124C9B684008AD399 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 592D8F7F24C9B684008AD399 /* Main.storyboard */; };
 		592D8F8424C9B684008AD399 /* Bottle_Rocket.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 592D8F8224C9B684008AD399 /* Bottle_Rocket.xcdatamodeld */; };
 		592D8F8624C9B68C008AD399 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 592D8F8524C9B68C008AD399 /* Assets.xcassets */; };
 		592D8F8924C9B68C008AD399 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 592D8F8724C9B68C008AD399 /* LaunchScreen.storyboard */; };
+		592D8F9624C9C069008AD399 /* LunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592D8F9524C9C069008AD399 /* LunchViewController.swift */; };
+		592D8F9824C9C07B008AD399 /* InternetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592D8F9724C9C07B008AD399 /* InternetViewController.swift */; };
+		592D8F9B24C9C1AA008AD399 /* LunchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592D8F9924C9C1AA008AD399 /* LunchCollectionViewCell.swift */; };
+		592D8F9C24C9C1AA008AD399 /* LunchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 592D8F9A24C9C1AA008AD399 /* LunchCollectionViewCell.xib */; };
+		592D8F9E24C9C882008AD399 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592D8F9D24C9C882008AD399 /* Restaurant.swift */; };
+		592D8FA124C9C909008AD399 /* RestaurantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592D8FA024C9C909008AD399 /* RestaurantService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		592D8F7624C9B684008AD399 /* Bottle Rocket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bottle Rocket.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		592D8F7924C9B684008AD399 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		592D8F7B24C9B684008AD399 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		592D8F7D24C9B684008AD399 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		592D8F8024C9B684008AD399 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		592D8F8324C9B684008AD399 /* Bottle_Rocket.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bottle_Rocket.xcdatamodel; sourceTree = "<group>"; };
 		592D8F8524C9B68C008AD399 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		592D8F8824C9B68C008AD399 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		592D8F8A24C9B68C008AD399 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		592D8F9524C9C069008AD399 /* LunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchViewController.swift; sourceTree = "<group>"; };
+		592D8F9724C9C07B008AD399 /* InternetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetViewController.swift; sourceTree = "<group>"; };
+		592D8F9924C9C1AA008AD399 /* LunchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchCollectionViewCell.swift; sourceTree = "<group>"; };
+		592D8F9A24C9C1AA008AD399 /* LunchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LunchCollectionViewCell.xib; sourceTree = "<group>"; };
+		592D8F9D24C9C882008AD399 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		592D8FA024C9C909008AD399 /* RestaurantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +68,12 @@
 		592D8F7824C9B684008AD399 /* Bottle Rocket */ = {
 			isa = PBXGroup;
 			children = (
+				592D8F9F24C9C8E6008AD399 /* WebService */,
+				592D8F9224C9B7D2008AD399 /* Controller */,
+				592D8F9124C9B7CA008AD399 /* View */,
+				592D8F9024C9B7B6008AD399 /* Model */,
 				592D8F7924C9B684008AD399 /* AppDelegate.swift */,
 				592D8F7B24C9B684008AD399 /* SceneDelegate.swift */,
-				592D8F7D24C9B684008AD399 /* ViewController.swift */,
 				592D8F7F24C9B684008AD399 /* Main.storyboard */,
 				592D8F8524C9B68C008AD399 /* Assets.xcassets */,
 				592D8F8724C9B68C008AD399 /* LaunchScreen.storyboard */,
@@ -68,6 +81,40 @@
 				592D8F8224C9B684008AD399 /* Bottle_Rocket.xcdatamodeld */,
 			);
 			path = "Bottle Rocket";
+			sourceTree = "<group>";
+		};
+		592D8F9024C9B7B6008AD399 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				592D8F9D24C9C882008AD399 /* Restaurant.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		592D8F9124C9B7CA008AD399 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				592D8F9924C9C1AA008AD399 /* LunchCollectionViewCell.swift */,
+				592D8F9A24C9C1AA008AD399 /* LunchCollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		592D8F9224C9B7D2008AD399 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				592D8F9524C9C069008AD399 /* LunchViewController.swift */,
+				592D8F9724C9C07B008AD399 /* InternetViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		592D8F9F24C9C8E6008AD399 /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				592D8FA024C9C909008AD399 /* RestaurantService.swift */,
+			);
+			path = WebService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				592D8F8924C9B68C008AD399 /* LaunchScreen.storyboard in Resources */,
+				592D8F9C24C9C1AA008AD399 /* LunchCollectionViewCell.xib in Resources */,
 				592D8F8624C9B68C008AD399 /* Assets.xcassets in Resources */,
 				592D8F8124C9B684008AD399 /* Main.storyboard in Resources */,
 			);
@@ -141,10 +189,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				592D8F7E24C9B684008AD399 /* ViewController.swift in Sources */,
 				592D8F7A24C9B684008AD399 /* AppDelegate.swift in Sources */,
+				592D8F9B24C9C1AA008AD399 /* LunchCollectionViewCell.swift in Sources */,
+				592D8F9624C9C069008AD399 /* LunchViewController.swift in Sources */,
+				592D8F9E24C9C882008AD399 /* Restaurant.swift in Sources */,
+				592D8FA124C9C909008AD399 /* RestaurantService.swift in Sources */,
 				592D8F7C24C9B684008AD399 /* SceneDelegate.swift in Sources */,
 				592D8F8424C9B684008AD399 /* Bottle_Rocket.xcdatamodeld in Sources */,
+				592D8F9824C9C07B008AD399 /* InternetViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
