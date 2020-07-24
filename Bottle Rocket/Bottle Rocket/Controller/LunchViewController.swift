@@ -20,6 +20,11 @@ class LunchViewController: UIViewController {
         super.viewDidLoad()
         self.showActivityIndicatory()
         self.initialSetup()
+//        let layout = UICollectionViewFlowLayout()
+//        layout.scrollDirection = .vertical //.horizontal
+//        layout.minimumLineSpacing = 5
+//        layout.minimumInteritemSpacing = 5
+//        collectionView.setCollectionViewLayout(layout, animated: true)
         
     }
 }
@@ -47,16 +52,32 @@ extension LunchViewController: UICollectionViewDataSource {
 extension LunchViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "DetailViewController", sender: lunchItemInfo?.restaurants[indexPath.row])
+        let lunchInfoData = lunchItemInfo?.restaurants[indexPath.row]
+        performSegue(withIdentifier: "DetailViewController", sender: lunchInfoData)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "DetailViewController" {
             let vc = segue.destination as? DetailViewController
-            vc?.detailData = sender as? RestaurantDetails
+            vc?.detailData = sender as? Restaurant
         }
     }
 }
+/*
+extension LunchViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+            return UIEdgeInsets(top: 1.0, left: 1.0, bottom: 1.0, right: 1.0)//here your custom value for spacing
+        }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+                let lay = collectionViewLayout as! UICollectionViewFlowLayout
+                let widthPerItem = collectionView.frame.width / 2 - lay.minimumInteritemSpacing
+
+    return CGSize(width:widthPerItem, height:100)
+    }
+    }
+*/
+
 
 //MARK:- Initial Setup method
 
