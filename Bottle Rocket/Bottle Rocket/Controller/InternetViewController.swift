@@ -9,13 +9,13 @@
 import UIKit
 import  WebKit
 
-
 class InternetViewController: UIViewController {
     
     var webView = WKWebView()
     let link = URL(string:"https://www.bottlerocketstudios.com")!
     let activityIndicator = UIActivityIndicatorView()
     
+    //MARK:- View Life Cycle method
     override func viewDidLoad() {
         super.viewDidLoad()
         self.showActivityIndicatory()
@@ -26,6 +26,9 @@ class InternetViewController: UIViewController {
         webView.load(request)
         self.addBarButtons()
     }
+}
+
+extension InternetViewController {
     
     func addConstraint() {
         let topConstraint = NSLayoutConstraint(item: webView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1.0, constant: 0)
@@ -33,20 +36,15 @@ class InternetViewController: UIViewController {
         let leadingConstraint = NSLayoutConstraint(item: webView, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1.0, constant: 0)
         let trailingConstraint = NSLayoutConstraint(item: webView, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1.0, constant: 0)
         view.addConstraints([topConstraint, bottomConstraint, leadingConstraint, trailingConstraint])
-        
     }
+    
     
     func addBarButtons() {
         let backBarButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(self.backButtonTapped))
         backBarButton.tintColor = .white
-        
         let refreshBarButton = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(self.refreshButtonTapped))
-        
         let nextBarButton = UIBarButtonItem(image: UIImage(systemName: "chevron.right"), style: .plain, target: self, action: #selector(self.forwardButtonTapped))
-        
-        
         self.navigationItem.leftBarButtonItems = [backBarButton, refreshBarButton, nextBarButton]
-        
     }
     
     func showActivityIndicatory() {
@@ -55,16 +53,17 @@ class InternetViewController: UIViewController {
         self.view.addSubview(activityView)
         activityView.startAnimating()
     }
-    
+}
+extension InternetViewController {
     @objc func backButtonTapped() {
         if (webView.canGoBack) {
             self.showActivityIndicatory()
             webView.goBack()
         }
     }
-    
+
     @objc func refreshButtonTapped() {
-    self.showActivityIndicatory()
+        self.showActivityIndicatory()
         webView.reload()
     }
     
@@ -73,6 +72,6 @@ class InternetViewController: UIViewController {
             self.showActivityIndicatory()
             webView.goForward()
         }
-        
     }
 }
+

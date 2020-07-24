@@ -14,6 +14,8 @@ class LunchViewController: UIViewController {
     var lunchItemInfo: RestaurantDetails?
     let activityIndicator = UIActivityIndicatorView()
     
+    //MARK:- View Life Cycle method
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.showActivityIndicatory()
@@ -22,7 +24,10 @@ class LunchViewController: UIViewController {
     }
 }
 
+// MARK: TableView Data source method
+
 extension LunchViewController: UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return lunchItemInfo?.restaurants.count ?? 0
     }
@@ -32,14 +37,12 @@ extension LunchViewController: UICollectionViewDataSource {
         let lunchInfoData = lunchItemInfo?.restaurants[indexPath.row]
         cell.restaurantName.text = lunchInfoData?.name
         cell.category.text = lunchInfoData?.category
-        
         self.downloadImage(lunchInfoData!.backgroundImageURL, indexPath: indexPath)
         return cell
-        
     }
-    
 }
 
+//MARK:- TableView Delegate method
 
 extension LunchViewController: UICollectionViewDelegate {
     
@@ -53,10 +56,12 @@ extension LunchViewController: UICollectionViewDelegate {
             vc?.detailData = sender as? RestaurantDetails
         }
     }
-    
 }
 
+//MARK:- Initial Setup method
+
 extension LunchViewController {
+    
     func initialSetup() {
         let nib = UINib(nibName: "LunchCollectionViewCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "LunchCollectionViewCell")
@@ -71,6 +76,9 @@ extension LunchViewController {
             }
         })
     }
+}
+
+extension LunchViewController {
     
     func downloadImage(_ url: URL, indexPath: IndexPath) {
         let imageDownloadManager = ImageDownloadManager()
@@ -96,5 +104,6 @@ extension LunchViewController {
            self.view.addSubview(activityView)
            activityView.startAnimating()
        }
-   
 }
+
+

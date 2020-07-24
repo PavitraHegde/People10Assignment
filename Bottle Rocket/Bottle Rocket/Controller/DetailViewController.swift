@@ -9,7 +9,7 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    
     var detailData: RestaurantDetails?
     
     @IBOutlet weak var itemImage: UIImageView!
@@ -19,8 +19,8 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
-
+    
 }
