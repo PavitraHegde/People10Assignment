@@ -18,6 +18,7 @@ class InternetViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.showActivityIndicatory()
         webView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(webView)
         self.addConstraint()
@@ -49,14 +50,13 @@ class InternetViewController: UIViewController {
     }
     
     func showActivityIndicatory() {
-        let activityView = UIActivityIndicatorView(style: .gray)
+        let activityView = UIActivityIndicatorView(style: .medium)
         activityView.center = self.view.center
         self.view.addSubview(activityView)
         activityView.startAnimating()
     }
     
     @objc func backButtonTapped() {
-        // self.dismiss(animated: true, completion: nil)
         if (webView.canGoBack) {
             self.showActivityIndicatory()
             webView.goBack()

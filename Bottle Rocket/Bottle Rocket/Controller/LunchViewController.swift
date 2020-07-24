@@ -12,12 +12,14 @@ class LunchViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     var lunchItemInfo: RestaurantDetails?
+    let activityIndicator = UIActivityIndicatorView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.showActivityIndicatory()
         self.initialSetup()
+        
     }
-    
 }
 
 extension LunchViewController: UICollectionViewDataSource {
@@ -35,7 +37,6 @@ extension LunchViewController: UICollectionViewDataSource {
         return cell
         
     }
-    
     
 }
 
@@ -61,6 +62,7 @@ extension LunchViewController {
         collectionView.register(nib, forCellWithReuseIdentifier: "LunchCollectionViewCell")
         let lunchInfoResult = RestaurantService()
         lunchInfoResult.fetchLunchItemList(completionHandler: { (error, response) in
+            self.activityIndicator.stopAnimating()
             if let error = error {
                 print(error)
             } else {
@@ -74,6 +76,7 @@ extension LunchViewController {
         let imageDownloadManager = ImageDownloadManager()
         imageDownloadManager.downloadImage(url: url) {
             (image, error) in
+            self.activityIndicator.stopAnimating()
             DispatchQueue.main.async {
                 guard let cell = self.collectionView.cellForItem(at: indexPath) as? LunchCollectionViewCell else {
                     return
@@ -86,5 +89,12 @@ extension LunchViewController {
             }
         }
     }
+    
+    func showActivityIndicatory() {
+        let activityView = UIActivityIndicatorView(style: .medium)
+           activityView.center = self.view.center
+           self.view.addSubview(activityView)
+           activityView.startAnimating()
+       }
    
 }
