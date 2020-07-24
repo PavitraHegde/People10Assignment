@@ -16,7 +16,7 @@ struct RestaurantDetails: Codable {
 // MARK: - Restaurant
 struct Restaurant: Codable {
     let name: String
-    let backgroundImageURL: String
+    let backgroundImageURL: URL
     let category: String
     let contact: Contact?
     let location: Location

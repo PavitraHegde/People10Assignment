@@ -19,6 +19,8 @@
 		592D8F9C24C9C1AA008AD399 /* LunchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 592D8F9A24C9C1AA008AD399 /* LunchCollectionViewCell.xib */; };
 		592D8F9E24C9C882008AD399 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592D8F9D24C9C882008AD399 /* Restaurant.swift */; };
 		592D8FA124C9C909008AD399 /* RestaurantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592D8FA024C9C909008AD399 /* RestaurantService.swift */; };
+		592D8FA324C9FB87008AD399 /* ImageDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592D8FA224C9FB87008AD399 /* ImageDownloadManager.swift */; };
+		592D8FA524CADB86008AD399 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592D8FA424CADB85008AD399 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		592D8F9A24C9C1AA008AD399 /* LunchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LunchCollectionViewCell.xib; sourceTree = "<group>"; };
 		592D8F9D24C9C882008AD399 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		592D8FA024C9C909008AD399 /* RestaurantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantService.swift; sourceTree = "<group>"; };
+		592D8FA224C9FB87008AD399 /* ImageDownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadManager.swift; sourceTree = "<group>"; };
+		592D8FA424CADB85008AD399 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 				592D8F8724C9B68C008AD399 /* LaunchScreen.storyboard */,
 				592D8F8A24C9B68C008AD399 /* Info.plist */,
 				592D8F8224C9B684008AD399 /* Bottle_Rocket.xcdatamodeld */,
+				592D8FA224C9FB87008AD399 /* ImageDownloadManager.swift */,
 			);
 			path = "Bottle Rocket";
 			sourceTree = "<group>";
@@ -105,6 +110,7 @@
 			children = (
 				592D8F9524C9C069008AD399 /* LunchViewController.swift */,
 				592D8F9724C9C07B008AD399 /* InternetViewController.swift */,
+				592D8FA424CADB85008AD399 /* DetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -195,6 +201,8 @@
 				592D8F9E24C9C882008AD399 /* Restaurant.swift in Sources */,
 				592D8FA124C9C909008AD399 /* RestaurantService.swift in Sources */,
 				592D8F7C24C9B684008AD399 /* SceneDelegate.swift in Sources */,
+				592D8FA324C9FB87008AD399 /* ImageDownloadManager.swift in Sources */,
+				592D8FA524CADB86008AD399 /* DetailViewController.swift in Sources */,
 				592D8F8424C9B684008AD399 /* Bottle_Rocket.xcdatamodeld in Sources */,
 				592D8F9824C9C07B008AD399 /* InternetViewController.swift in Sources */,
 			);

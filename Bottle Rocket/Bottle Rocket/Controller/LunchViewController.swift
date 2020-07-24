@@ -16,7 +16,6 @@ class LunchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialSetup()
-        
     }
     
 }
@@ -32,6 +31,7 @@ extension LunchViewController: UICollectionViewDataSource {
         cell.restaurantName.text = lunchInfoData?.name
         cell.category.text = lunchInfoData?.category
         
+        self.downloadImage(lunchInfoData!.backgroundImageURL, indexPath: indexPath)
         return cell
         
     }
@@ -41,6 +41,17 @@ extension LunchViewController: UICollectionViewDataSource {
 
 
 extension LunchViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "DetailViewController", sender: lunchItemInfo?.restaurants[indexPath.row])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DetailViewController" {
+            let vc = segue.destination as? DetailViewController
+            vc?.detailData = sender as? RestaurantDetails
+        }
+    }
     
 }
 
@@ -58,4 +69,22 @@ extension LunchViewController {
             }
         })
     }
+    
+    func downloadImage(_ url: URL, indexPath: IndexPath) {
+        let imageDownloadManager = ImageDownloadManager()
+        imageDownloadManager.downloadImage(url: url) {
+            (image, error) in
+            DispatchQueue.main.async {
+                guard let cell = self.collectionView.cellForItem(at: indexPath) as? LunchCollectionViewCell else {
+                    return
+                }
+                if let image = image {
+                    cell.Item.image = image
+                } else {
+                    cell.Item.image = UIImage(named: "hopdoddy")
+                }
+            }
+        }
+    }
+   
 }
