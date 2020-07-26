@@ -11,9 +11,7 @@ import UIKit
 class LunchCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var Item: UIImageView!
-    
     @IBOutlet weak var restaurantName: UILabel!
-    
     @IBOutlet weak var category: UILabel!
     
     override func awakeFromNib() {

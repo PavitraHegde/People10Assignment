@@ -15,8 +15,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var address: UILabel!
     @IBOutlet weak var phone: UILabel!
-    
     @IBOutlet weak var twitter: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         name.text = detailData?.name
