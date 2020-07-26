@@ -11,8 +11,6 @@ import UIKit
 class DetailViewController: UIViewController {
     
     var detailData: Restaurant?
-    
-    @IBOutlet weak var itemImage: UIImageView!
     @IBOutlet weak var category: UILabel!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var address: UILabel!

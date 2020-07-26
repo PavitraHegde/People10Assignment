@@ -12,20 +12,20 @@ class LunchViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     var lunchItemInfo: RestaurantDetails?
-    let activityIndicator = UIActivityIndicatorView()
+    let activityIndicator = UIActivityIndicatorView(style: .medium)
     
     //MARK:- View Life Cycle method
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.showActivityIndicatory()
         self.initialSetup()
-//        let layout = UICollectionViewFlowLayout()
-//        layout.scrollDirection = .vertical //.horizontal
-//        layout.minimumLineSpacing = 5
-//        layout.minimumInteritemSpacing = 5
-//        collectionView.setCollectionViewLayout(layout, animated: true)
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.view.addSubview(activityIndicator)
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.center = self.view.center
+        activityIndicator.startAnimating()
     }
 }
 
@@ -63,20 +63,18 @@ extension LunchViewController: UICollectionViewDelegate {
         }
     }
 }
-/*
+
 extension LunchViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-            return UIEdgeInsets(top: 1.0, left: 1.0, bottom: 1.0, right: 1.0)//here your custom value for spacing
+            return UIEdgeInsets(top: 1.0, left: 1.0, bottom: 1.0, right: 1.0)
         }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-                let lay = collectionViewLayout as! UICollectionViewFlowLayout
-                let widthPerItem = collectionView.frame.width / 2 - lay.minimumInteritemSpacing
-
-    return CGSize(width:widthPerItem, height:100)
+        let layout = collectionViewLayout as! UICollectionViewFlowLayout
+        let widthPerItem = collectionView.frame.width - layout.minimumInteritemSpacing
+        return CGSize(width: widthPerItem, height: collectionView.frame.height / 4)
     }
-    }
-*/
+}
 
 
 //MARK:- Initial Setup method
@@ -118,13 +116,6 @@ extension LunchViewController {
             }
         }
     }
-    
-    func showActivityIndicatory() {
-        let activityView = UIActivityIndicatorView(style: .medium)
-           activityView.center = self.view.center
-           self.view.addSubview(activityView)
-           activityView.startAnimating()
-       }
 }
 
 
