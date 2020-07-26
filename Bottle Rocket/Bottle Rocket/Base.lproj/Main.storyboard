@@ -243,8 +243,8 @@
                                 </variation>
                                 <variation key="widthClass=regular">
                                     <mask key="constraints">
-                                        <include reference="vR0-9H-9wi"/>
                                         <exclude reference="KvQ-g0-YDl"/>
+                                        <include reference="vR0-9H-9wi"/>
                                         <include reference="ddN-Dz-IMG"/>
                                     </mask>
                                 </variation>
@@ -272,19 +272,19 @@
                             <mask key="constraints">
                                 <exclude reference="8zq-GV-4dc"/>
                                 <exclude reference="fed-BG-Vrq"/>
-                                <exclude reference="h4I-hr-z11"/>
                                 <exclude reference="MBi-Zn-2eQ"/>
+                                <exclude reference="h4I-hr-z11"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=regular">
                             <mask key="constraints">
                                 <include reference="8zq-GV-4dc"/>
+                                <exclude reference="KdR-3c-kom"/>
                                 <exclude reference="VnD-Pw-96A"/>
                                 <include reference="fed-BG-Vrq"/>
-                                <exclude reference="KdR-3c-kom"/>
-                                <include reference="h4I-hr-z11"/>
                                 <exclude reference="1bc-WG-huP"/>
                                 <include reference="MBi-Zn-2eQ"/>
+                                <include reference="h4I-hr-z11"/>
                                 <exclude reference="ohE-Xb-txf"/>
                             </mask>
                         </variation>

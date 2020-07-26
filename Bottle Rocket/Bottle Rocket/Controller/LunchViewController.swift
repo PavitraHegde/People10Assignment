@@ -12,21 +12,16 @@ class LunchViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     var lunchItemInfo: RestaurantDetails?
-    let activityIndicator = UIActivityIndicatorView(style: .medium)
+    private var activityIndicator = UIActivityIndicatorView(style: .medium)
     
     //MARK:- View Life Cycle method
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialSetup()
+        self.setupActivityIndicator()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        self.view.addSubview(activityIndicator)
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.center = self.view.center
-        activityIndicator.startAnimating()
-    }
 }
 
 // MARK: TableView Data source method
@@ -85,6 +80,7 @@ extension LunchViewController {
         let nib = UINib(nibName: "LunchCollectionViewCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "LunchCollectionViewCell")
         let lunchInfoResult = RestaurantService()
+        activityIndicator.startAnimating()
         lunchInfoResult.fetchLunchItemList(completionHandler: { (error, response) in
             self.activityIndicator.stopAnimating()
             if let error = error {
@@ -95,6 +91,12 @@ extension LunchViewController {
             }
         })
     }
+    
+    func setupActivityIndicator() {
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        self.view.addSubview(activityIndicator)
+    }
 }
 
 extension LunchViewController {
@@ -103,7 +105,6 @@ extension LunchViewController {
         let imageDownloadManager = ImageDownloadManager()
         imageDownloadManager.downloadImage(url: url) {
             (image, error) in
-            self.activityIndicator.stopAnimating()
             DispatchQueue.main.async {
                 guard let cell = self.collectionView.cellForItem(at: indexPath) as? LunchCollectionViewCell else {
                     return

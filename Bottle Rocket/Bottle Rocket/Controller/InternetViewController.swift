@@ -13,12 +13,10 @@ class InternetViewController: UIViewController {
     
     var webView = WKWebView()
     let link = URL(string:"https://www.bottlerocketstudios.com")!
-    let activityIndicator = UIActivityIndicatorView()
     
     //MARK:- View Life Cycle method
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.showActivityIndicatory()
         webView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(webView)
         self.addConstraint()
@@ -46,30 +44,20 @@ extension InternetViewController {
         let nextBarButton = UIBarButtonItem(image: UIImage(systemName: "chevron.right"), style: .plain, target: self, action: #selector(self.forwardButtonTapped))
         self.navigationItem.leftBarButtonItems = [backBarButton, refreshBarButton, nextBarButton]
     }
-    
-    func showActivityIndicatory() {
-        let activityView = UIActivityIndicatorView(style: .medium)
-        activityView.center = self.view.center
-        self.view.addSubview(activityView)
-        activityView.startAnimating()
-    }
 }
 extension InternetViewController {
     @objc func backButtonTapped() {
         if (webView.canGoBack) {
-            self.showActivityIndicatory()
             webView.goBack()
         }
     }
-
+    
     @objc func refreshButtonTapped() {
-        self.showActivityIndicatory()
         webView.reload()
     }
     
     @objc func forwardButtonTapped() {
         if (webView.canGoForward) {
-            self.showActivityIndicatory()
             webView.goForward()
         }
     }
